@@ -1,0 +1,22 @@
+{% extends 'components/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    {% block content %}
+    <h1>Users List</h1>
+
+    {% if last_users_list %} {% for user in last_users_list %}
+    <ul>
+      <li>{{user.first_name}} {{user.last_name}}</li>
+    </ul>
+    {% endfor %} {% else %}
+    <p>users not found</p>
+    {% endif %} {% endblock %}
+  </body>
+</html>
